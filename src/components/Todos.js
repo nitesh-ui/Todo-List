@@ -1,8 +1,14 @@
 import React from 'react'
+import TodoItem from './TodoItem'
 
-const Todos = () => {
+const Todos = (props) => {
     return (
-        <div>Todos</div>
+        <div className="container">
+            <h4 className="text-center my-3">Todos List</h4>
+            {props.todos.map((todo) => {
+                return <TodoItem todo={todo} key={todo.sno} onDelete={props.onDelete}/>
+            })}
+        </div>
     )
 }
 
